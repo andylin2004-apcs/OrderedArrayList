@@ -3,8 +3,10 @@ import java.lang.IllegalArgumentException;
 
 public class NoNullArrayList<T> extends ArrayList<T>{
 
-  ArrayList<T> nullTheNull = new ArrayList<T>();
+  ArrayList<T> nullTheNull;
+
   public NoNullArrayList(){
+    nullTheNull = new ArrayList<T>();
   }
 
   public boolean add(T value){
