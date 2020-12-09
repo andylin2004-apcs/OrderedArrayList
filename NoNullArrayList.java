@@ -9,6 +9,10 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     nullTheNull = new ArrayList<T>();
   }
 
+  public NoNullArrayList(int initalCapacity){
+    nullTheNull = new ArrayList<T>(initalCapacity);
+  }
+
   public boolean add(T value){
     if (value == null){
       throw new IllegalArgumentException();
