@@ -14,6 +14,15 @@ public class NoNullArrayList<T> extends ArrayList<T>{
       return nullTheNull.add(value);
     }
   }
+
+  public void add(int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException();
+    }else{
+      nullTheNull.add(index, value);
+    }
+  }
+
   public T set(int index, T value){
     if (value == null){
       throw new IllegalArgumentException();
