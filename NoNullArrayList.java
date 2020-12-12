@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.lang.IllegalArgumentException;
 
 public class NoNullArrayList<T> extends ArrayList<T>{
-
   ArrayList<T> nullTheNull;
 
   public NoNullArrayList(){
@@ -32,5 +31,17 @@ public class NoNullArrayList<T> extends ArrayList<T>{
       throw new IllegalArgumentException();
     }
     return nullTheNull.set(index, value);
+  }
+
+  public int size(){
+    return nullTheNull.size();
+  }
+
+  public T get(int index){
+    return nullTheNull.get(index);
+  }
+
+  public String toString(){
+    return nullTheNull.toString();
   }
 }
