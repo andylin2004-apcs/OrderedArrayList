@@ -16,24 +16,21 @@ public class NoNullArrayList<T> extends ArrayList<T>{
   public boolean add(T value){
     if (value == null){
       throw new IllegalArgumentException();
-    }else{
-      return nullTheNull.add(value);
     }
+    return nullTheNull.add(value);
   }
 
   public void add(int index, T value){
     if (value == null){
       throw new IllegalArgumentException();
-    }else{
-      nullTheNull.add(index, value);
     }
+    nullTheNull.add(index, value);
   }
 
   public T set(int index, T value){
     if (value == null){
       throw new IllegalArgumentException();
-    }else{
-      return nullTheNull.set(index, value);
     }
+    return nullTheNull.set(index, value);
   }
 }
