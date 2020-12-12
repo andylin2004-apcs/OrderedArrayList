@@ -16,10 +16,21 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     }
     for (int i = 0; i<orderedList.size(); i++){
       if (orderedList.get(i).compareTo(value) < 0){
-        orderedList.add(i, value);
+        orderedList.add(i+1, value);
         return true;
       }
     }
     return true;
+  }
+
+  public void add(int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException();
+    }
+    for (int i = 0; i<orderedList.size(); i++){
+      if (orderedList.get(i).compareTo(value) < 0){
+        orderedList.add(i+1, value);
+      }
+    }
   }
 }
