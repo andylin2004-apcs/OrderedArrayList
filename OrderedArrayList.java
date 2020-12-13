@@ -9,9 +9,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add(T value){
-    if (value == null){
-      throw new IllegalArgumentException();
-    }
     if (super.size() == 0){
       super.add(value);
       return true;
@@ -26,9 +23,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public void add(int index, T value){
-    if (value == null){
-      throw new IllegalArgumentException();
-    }
     for (int i = 0; i<super.size(); i++){
       if (super.get(i).compareTo(value) > 0){
         super.add(i, value);
