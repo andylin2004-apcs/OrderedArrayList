@@ -1,30 +1,28 @@
+import java.util.ArrayList;
+
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T>{
 
-  NoNullArrayList<T> orderedList;
-
   public OrderedArrayList(){
-    orderedList = new NoNullArrayList<T>();
   }
 
   public OrderedArrayList(int initalCapacity){
-    orderedList = new NoNullArrayList<T>(initalCapacity);
   }
 
   public boolean add(T value){
     if (value == null){
       throw new IllegalArgumentException();
     }
-    if (orderedList.size() == 0){
-      orderedList.add(value);
+    System.out.println(super.size());
+    if (super.size() == 0){
+      super.add(value);
       return true;
     }
-    for (int i = 0; i<orderedList.size(); i++){
-      if (orderedList.get(i).compareTo(value) > 0){
-        orderedList.add(i, value);
+    for (int i = 0; i<super.size(); i++){
+      if (super.get(i).compareTo(value) > 0){
+        super.add(i, value);
         return true;
       }
     }
-    orderedList.add(value);
     return true;
   }
 
@@ -32,16 +30,13 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     if (value == null){
       throw new IllegalArgumentException();
     }
-    if (orderedList.size() == 0){
-      orderedList.add(value);
-    }else{
-      for (int i = 0; i<orderedList.size(); i++){
-        if (orderedList.get(i).compareTo(value) > 0){
-          orderedList.add(i, value);
-          break;
-        }else if(i == orderedList.size()-1){
-          orderedList.add(value);
-        }
+    for (int i = 0; i<super.size(); i++){
+      System.out.println(i);
+      if (super.get(i).compareTo(value) > 0){
+        super.add(i, value);
+        break;
+      }else if(i == super.size()-1){
+        super.add(value);
       }
     }
   }
@@ -50,13 +45,12 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     if (value == null){
       throw new IllegalArgumentException();
     }
-    T out = orderedList.get(index);
-    orderedList.remove(index);
-    orderedList.add(value);
+    T out = super.get(index);
+    System.out.println(out);
+    if (super.size() > index){
+      super.remove(index);
+    }
+    this.add(value);
     return out;
-  }
-
-  public String toString(){
-    return orderedList.toString();
   }
 }
