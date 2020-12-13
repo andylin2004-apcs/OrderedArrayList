@@ -12,7 +12,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     if (value == null){
       throw new IllegalArgumentException();
     }
-    System.out.println(super.size());
     if (super.size() == 0){
       super.add(value);
       return true;
@@ -31,7 +30,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
       throw new IllegalArgumentException();
     }
     for (int i = 0; i<super.size(); i++){
-      System.out.println(i);
       if (super.get(i).compareTo(value) > 0){
         super.add(i, value);
         break;
@@ -46,7 +44,6 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
       throw new IllegalArgumentException();
     }
     T out = super.get(index);
-    System.out.println(out);
     if (super.size() > index){
       super.remove(index);
     }
